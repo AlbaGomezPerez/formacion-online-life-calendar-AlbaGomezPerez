@@ -1,7 +1,8 @@
 import React from "react";
-import "react-datepicker/dist/react-datepicker.css";
 import {Link} from "react-router-dom";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import './../styles/form.css';
 
 
 const Form = props => {
@@ -22,6 +23,7 @@ const Form = props => {
 
     function setSmileyValue(changeEvent){
         happyStatus = changeEvent.target.value === 'happy';
+        openReasonInput()
     }
 
     function setCalendarValue(changeEvent){
@@ -33,6 +35,15 @@ const Form = props => {
         reasonToBeHappy = changeEvent.target.value;
     }
 
+    // COLLAPSIBLE FUNCTION
+    function openReasonInput() {
+        if (selectFace.value.contains('happy')) {
+            reasonSmiley.classList.remove('hidden');
+        } else {
+            reasonSmiley.classList.add('hidden');
+        }
+    }
+
     return (
         <div>
             <DatePicker selected={date}
@@ -40,13 +51,12 @@ const Form = props => {
                         dateFormat="dd/MM/yyyy"
             />
 
-            <input type="radio" value="happy" onChange={setSmileyValue}/>
+            <input className="selectFace" type="radio" value="happy" onChange={setSmileyValue}/>
             :)
-            <input type="radio" value="sad" onChange={setSmileyValue}/>
+            <input className="selectFace" type="radio" value="sad" onChange={setSmileyValue}/>
             :(
             <br/>
-            ¿Por qué estoy content@?
-            <input type="text" onChange={setReasonToBeHappyValue}/>
+            <input className="reasonSmiley hidden" type="text" placeholder="Estoy contento porque..." onChange={setReasonToBeHappyValue}/>
             <Link className="saveSmiley" to={"/"} onClick={setSmileyForm}>
                 Guardar
             </Link>

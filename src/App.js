@@ -14,10 +14,18 @@ class App extends React.Component {
         };
     }
     componentDidMount() {
-        //TODO obtener del localstorage lo guardado
+        // TODO obtener del localstorage lo guardado
+        // this.functionLocal();
     }
 
-    render(){
+    // GUARDAR DATOS
+    // localStorage.setItem("Nombre", JSON.stringify(nombre));
+    // showFavourites();
+
+    // RECOGER DATOS
+    // let nombre = localStorage.getItem("Nombre");
+
+    render() {
         return (
             <div className="App">
                 <Switch>
