@@ -10,7 +10,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            smiliesList: [],
+            smilesList: ['hola'],
         };
     }
     componentDidMount() {
@@ -26,6 +26,7 @@ class App extends React.Component {
     // let nombre = localStorage.getItem("Nombre");
 
     render() {
+        const {smilesList} = this.state;
         return (
             <div className="App">
                 <Switch>
@@ -39,7 +40,9 @@ class App extends React.Component {
                     <Route
                         path="/create/"
                         render={routerProps => (
-                            <Form/>
+                            <Form
+                            smilesList={smilesList}
+                            />
                         )}
                     />
                 </Switch>

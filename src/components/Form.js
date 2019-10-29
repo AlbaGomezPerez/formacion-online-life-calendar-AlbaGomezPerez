@@ -7,6 +7,8 @@ import './../styles/form.css';
 
 
 const Form = props => {
+    const {smilesList} = props;
+    console.log(smilesList);
 
     let date = new Date();
     let happyStatus;
@@ -16,8 +18,12 @@ const Form = props => {
         console.log('Fecha: ' + date);
         console.log('Feliz: ' + happyStatus);
         console.log('Razon: ' + reasonToBeHappy);
+        let formData = smilesList();
+        formData.Date = "date";
+        formData.HappyStatus = "happyStatus";
+        formData.Reason = "reasonToBeHappy";
         // this.setState({
-        //     SearchName: SearchName
+        //     smiliesList: smiliesList
         // });
         //TODO crear objeto y guardarlo en el estado y en el localstorage
     }
@@ -52,13 +58,14 @@ const Form = props => {
                         dateFormat="dd/MM/yyyy"
             />
 
-                <Collapsible triggerTagName="input" className="selectFace" type="radio" value="happy" onChange={setSmileyValue}>
+            <input className="selectFace" type="radio" value="happy" onChange={setSmileyValue} />
                 :)
-                </Collapsible>
-            <input className="selectFace" type="radio" value="sad" onChange={setSmileyValue}/>
+            <Collapsible triggerTagName="input">
+                <input className="reasonSmiley" type="text" placeholder="Estoy contento porque..." onChange={setReasonToBeHappyValue}/>
+            </Collapsible>
+            <input className="selectFace" type="radio" value="sad" onChange={setSmileyValue} />
             :(
             <br/>
-            <input className="reasonSmiley hidden" type="text" placeholder="Estoy contento porque..." onChange={setReasonToBeHappyValue}/>
             <Link className="saveSmiley" to={"/"} onClick={setSmileyForm}>
                 Guardar
             </Link>
