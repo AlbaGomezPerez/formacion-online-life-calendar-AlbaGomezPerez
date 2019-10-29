@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import DatePicker from "react-datepicker";
+import Collapsible from 'react-collapsible';
 import "react-datepicker/dist/react-datepicker.css";
 import './../styles/form.css';
 
@@ -23,7 +24,7 @@ const Form = props => {
 
     function setSmileyValue(changeEvent){
         happyStatus = changeEvent.target.value === 'happy';
-        openReasonInput()
+        // openReasonInput()
     }
 
     function setCalendarValue(changeEvent){
@@ -36,13 +37,13 @@ const Form = props => {
     }
 
     // COLLAPSIBLE FUNCTION
-    function openReasonInput() {
-        if (selectFace.value.contains('happy')) {
-            reasonSmiley.classList.remove('hidden');
-        } else {
-            reasonSmiley.classList.add('hidden');
-        }
-    }
+    // function openReasonInput() {
+    //     if (selectFace.value.contains('happy')) {
+    //         reasonSmiley.classList.remove('hidden');
+    //     } else {
+    //         reasonSmiley.classList.add('hidden');
+    //     }
+    // }
 
     return (
         <div>
@@ -51,8 +52,9 @@ const Form = props => {
                         dateFormat="dd/MM/yyyy"
             />
 
-            <input className="selectFace" type="radio" value="happy" onChange={setSmileyValue}/>
-            :)
+                <Collapsible triggerTagName="input" className="selectFace" type="radio" value="happy" onChange={setSmileyValue}>
+                :)
+                </Collapsible>
             <input className="selectFace" type="radio" value="sad" onChange={setSmileyValue}/>
             :(
             <br/>
