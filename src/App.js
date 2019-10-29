@@ -10,23 +10,24 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            smilesList: ['hola'],
+            smilesList: [],
+            startDate: new Date()
         };
     }
     componentDidMount() {
-        // TODO obtener del localstorage lo guardado
-        // this.functionLocal();
+       let usersDataString = localStorage.getItem("usersData");
+        if(usersDataString != undefined && usersDataString != null){
+            let usersDataParsed = JSON.parse(usersDataString);
+
+            this.setState({
+                smilesList: usersDataParsed
+            })
+        }
     }
 
-    // GUARDAR DATOS
-    // localStorage.setItem("Nombre", JSON.stringify(nombre));
-    // showFavourites();
-
-    // RECOGER DATOS
-    // let nombre = localStorage.getItem("Nombre");
 
     render() {
-        const {smilesList} = this.state;
+        const {smilesList, startDate} = this.state;
         return (
             <div className="App">
                 <Switch>
@@ -42,6 +43,7 @@ class App extends React.Component {
                         render={routerProps => (
                             <Form
                             smilesList={smilesList}
+                            startDate={startDate}
                             />
                         )}
                     />

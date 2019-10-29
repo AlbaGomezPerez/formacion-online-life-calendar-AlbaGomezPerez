@@ -7,7 +7,7 @@ import './../styles/form.css';
 
 
 const Form = props => {
-    const {smilesList} = props;
+    const {smilesList, startDate} = props;
     console.log(smilesList);
 
     let date = new Date();
@@ -18,14 +18,15 @@ const Form = props => {
         console.log('Fecha: ' + date);
         console.log('Feliz: ' + happyStatus);
         console.log('Razon: ' + reasonToBeHappy);
-        let formData = smilesList();
-        formData.Date = "date";
-        formData.HappyStatus = "happyStatus";
-        formData.Reason = "reasonToBeHappy";
-        // this.setState({
-        //     smiliesList: smiliesList
-        // });
-        //TODO crear objeto y guardarlo en el estado y en el localstorage
+        let formData = {
+            date: date,
+            happyStatus: happyStatus,
+            reason: reasonToBeHappy
+        };
+
+        //add object formData
+        smilesList.push(formData);
+        localStorage.setItem("usersData", JSON.stringify(smilesList));
     }
 
     function setSmileyValue(changeEvent){
