@@ -4,8 +4,6 @@ import SmileyList from "./components/SmileyList";
 import Form from "./components/Form";
 import './App.css';
 
-
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -13,10 +11,11 @@ class App extends React.Component {
             smilesList: [],
             startDate: new Date()
         };
+        this.setCalendarValue = this.setCalendarValue.bind(this);
     }
     componentDidMount() {
        let usersDataString = localStorage.getItem("usersData");
-        if(usersDataString != undefined && usersDataString != null){
+        if(usersDataString !== undefined && usersDataString !== null){
             let usersDataParsed = JSON.parse(usersDataString);
 
             this.setState({
@@ -25,6 +24,11 @@ class App extends React.Component {
         }
     }
 
+    setCalendarValue(date){
+        this.setState({
+            startDate: date
+        });
+    }
 
     render() {
         const {smilesList, startDate} = this.state;
@@ -44,6 +48,7 @@ class App extends React.Component {
                             <Form
                             smilesList={smilesList}
                             startDate={startDate}
+                            setCalendarValue={this.setCalendarValue}
                             />
                         )}
                     />
