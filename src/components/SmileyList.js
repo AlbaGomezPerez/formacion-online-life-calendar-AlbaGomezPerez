@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 const SmileyList = props => {
@@ -11,7 +11,7 @@ return (
                 +
             </Link>
             <ul className="smileyList">
-//TODO pintar listado del estado
+                <li>TODO pintar listado del estado</li>
             </ul>
         </React.Fragment>
     );
