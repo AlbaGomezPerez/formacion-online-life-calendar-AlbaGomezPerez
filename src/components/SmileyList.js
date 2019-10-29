@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 // import PropTypes from 'prop-types';
 import './../styles/smileyList.css';
 
-
 const SmileyList = props => {
+    let {smileyList} = props;
 
-return (
-        <React.Fragment>
-            <Link className="addSmiley" to={"/create/"}>
+    return (
+        <div>
+            <Link className="addSmiley" to={'/create/'}>
                 +
             </Link>
             <ul className="smileyList">
-                <li>TODO pintar listado del estado</li>
+                 <li>{smileyList}</li>
+                <li>pintar listado del estado</li>
             </ul>
-        </React.Fragment>
+        </div>
     );
 };
 
