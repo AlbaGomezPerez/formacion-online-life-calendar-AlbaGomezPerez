@@ -63,12 +63,28 @@ class App extends React.Component {
             reason: this.state.reasonToBeHappy
         };
         //add object formData
-        // this.state.smilesList.push(formData);
         this.setState(previousState => ({
             smilesList: [...previousState.smilesList, formData]
         }));
-        localStorage.setItem("usersData", JSON.stringify(this.state.smilesList));
+        console.log("Estado antes de guardar en LS:" + this.state.smilesList);
+
+        // recojo los datos del local
+        // si está vacío, entonces me guardas el array con el objeto
+        // si no está vacío, agrego los datos a la variable del local
+        let usersDataString = localStorage.getItem("usersData");
+        if(usersDataString === '' || usersDataString === null || usersDataString === undefined){
+            let usersDataList = [formData];
+            usersDataString = JSON.stringify(usersDataList);
+        }else{
+            let usersDataParsed = JSON.parse(usersDataString);
+            usersDataParsed.push(formData);
+            usersDataString = JSON.stringify(usersDataParsed);
+        }
+        localStorage.setItem("usersData", usersDataString);
     }
+
+
+
 
     render() {
         const {smilesList, startDate, happyStatus} = this.state;

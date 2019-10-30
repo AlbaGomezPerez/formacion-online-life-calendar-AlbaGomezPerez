@@ -6,6 +6,7 @@ import './../styles/smileyList.css';
 const Smilies = props => {
     let {smilesList} = props;
 
+    console.log(smilesList);
 
     return (
         <div>
@@ -13,16 +14,15 @@ const Smilies = props => {
                 <div className="createSmiley">{'+'}</div>
             </Link>
             <ul className="smileyList">
-                <li className="happySmile">:)</li>
-                <li className="sadSmile">:(</li>
-                <li className="happySmile">:)</li>
-                <li className="sadSmile">:(</li>
-                <li className="happySmile">:)</li>
-                <li className="sadSmile">:(</li>
-                <li className="happySmile">:)</li>
-                <li className="sadSmile">:(</li>
-                <li className="happySmile">:)</li>
-                <li className="sadSmile">:(</li>
+                {smilesList
+                    .map((face, index) => {
+                        return (
+                            <li className={face.happyStatus ? 'happySmile' : 'sadSmile'} key={index} >
+                                {face.happyStatus ? ':)' : ':('}
+                            </li>
+                        );
+                    })
+                }
             </ul>
         </div>
     );
