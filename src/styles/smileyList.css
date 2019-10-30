@@ -1,0 +1,47 @@
+.addSmiley{
+    text-decoration: none;
+}
+
+.createSmiley{
+    background-color: #4d738b;
+    height: 150px;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.smileyList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.happySmile{
+    background-color: #fdff78;
+    font-size: 80px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.sadSmile{
+    background-color: #ff687f;
+    font-size: 80px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}

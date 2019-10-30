@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import SmileyList from "./components/SmileyList";
+import Smilies from "./components/Smilies";
 import Form from "./components/Form";
 import './App.css';
 
@@ -54,6 +55,7 @@ class App extends React.Component {
         });
     }
 
+
     setSmileyForm(){
         const formData = {
             date: this.state.startDate,
@@ -61,7 +63,10 @@ class App extends React.Component {
             reason: this.state.reasonToBeHappy
         };
         //add object formData
-        this.state.smilesList.push(formData);
+        // this.state.smilesList.push(formData);
+        this.setState(previousState => ({
+            smilesList: [...previousState.smilesList, formData]
+        }));
         localStorage.setItem("usersData", JSON.stringify(this.state.smilesList));
     }
 
@@ -75,8 +80,9 @@ class App extends React.Component {
                         exact
                         path="/"
                         render={routerProps => (
-                            <SmileyList
+                            <Smilies
                                 smilesList={smilesList}
+                                happyStatus={happyStatus}
                             />
                         )}
                     />
