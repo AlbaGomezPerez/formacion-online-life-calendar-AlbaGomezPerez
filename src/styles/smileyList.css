@@ -1,5 +1,20 @@
+.smilieContainer{
+    background-color: white;
+    height: 100vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    position:relative;
+    webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
 .addSmiley{
     text-decoration: none;
+    position: fixed;
+    width: 60%;
+    left: 20%;
+    top:0;
 }
 
 .createSmiley{
@@ -7,15 +22,17 @@
     height: 150px;
     font-size: 100px;
     color: white;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
 }
 
 .smileyList{
     display: flex;
     flex-wrap: wrap;
+    padding-top: 12%;
+    height: 100vh;
 }
 
 .happySmile{

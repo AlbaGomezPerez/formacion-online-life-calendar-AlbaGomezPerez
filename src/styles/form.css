@@ -1,9 +1,100 @@
+.formContainer{
+    background-color: white;
+    height: 100vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 5%;
+    position:relative;
+    webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.dateText{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 5%;
+    margin-bottom: 10px;
+}
+
+.calendarContainer{
+    text-align: left;
+    padding-left: 5%;
+}
+
+.calendar{
+    font-size: 18px;
+    color: grey;
+    background-color: #f3fff6;
+    box-shadow: 5px 4px 18px 6px #dfdfdf;
+    border: none;
+}
+
+.stateText{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 5%;
+    margin-bottom: 10px;
+}
+
+.selectFace{
+    margin-left: 30px;
+    font-size: 50px;
+}
+
+.faceContainer{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 5%;
+    margin-bottom: 5%;
+}
+
+.reasonContainer{
+    text-align: left;
+    font-size: 30px;
+    padding-left: 5%;
+    margin-top: 2%;
+}
+
 .reasonSmiley{
-    background-color: pink;
-    width: 200px;
-    height: 30px;
+    width: 480px;
+    height: 100px;
+    padding-top: 0px;
+    padding-left: 2%;
+    background-color: #f3fff6;
+    font-size: 18px;
+    margin-bottom: 5%;
+    box-shadow: 5px 4px 18px 6px #dfdfdf;
+    border: none;
+
 }
 
 .hidden{
     display: none;
+}
+
+.saveContainer{
+    font-size: 30px;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.saveSmiley{
+    background-color: #4d738b;
+    margin: auto;
+    width: 90%;
+    height: 60px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancelSmiley{
+    color: grey;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 1%;
 }

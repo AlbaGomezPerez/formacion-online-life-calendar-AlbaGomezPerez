@@ -9,7 +9,7 @@ const Smilies = props => {
     console.log(smilesList);
 
     return (
-        <div>
+        <div className="smilieContainer">
             <Link className="addSmiley" to={'/create/'}>
                 <div className="createSmiley">{'+'}</div>
             </Link>

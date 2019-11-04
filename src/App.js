@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import SmileyList from "./components/SmileyList";
 import Smilies from "./components/Smilies";
 import Form from "./components/Form";
 import './App.css';
