@@ -26,15 +26,15 @@ const Form = props => {
                 :(
             </div>
             <div className="reasonContainer">
-                <input className="reasonSmiley hidden" type="text" placeholder="Estoy contento porque..."
+                <input className="reasonSmiley hidden" type="text" placeholder="I feel happy because..."
                        onChange={setReasonToBeHappyValue}/>
             </div>
             <div className="saveContainer">
                 <Link className="saveSmiley" to={"/"} onClick={setSmileyForm}>
-                    Guardar
+                    Save
                 </Link>
                 <Link className="cancelSmiley" to={"/"}>
-                    Cancelar
+                    Cancel
                 </Link>
             </div>
 
